@@ -10,7 +10,8 @@
   position: fixed;
   width: 100%;
   top: 0;
-  left: 0; }
+  left: 0;
+  z-index: 1; }
 
 .nav {
   display: flex;
@@ -63,7 +64,8 @@
   body {
     padding-top: 70px; }
   .header {
-    height: 60px; }
+    height: 60px;
+    z-index: 1; }
     .header .logo {
       font-size: 25px;
       padding: 0 20px;
@@ -72,7 +74,8 @@
       flex-direction: column;
       align-items: center;
       margin: 0;
-      background-image: linear-gradient(rgba(0.2,0.4,0.5,0.8),rgba(0.3,0.5,0.8,8));
+      background-image: linear-gradient(rgba(0, 0, 1, 0.8), #000101);
+      height: 500px;
       position: fixed;
       top: 60px;
       width: 100%;
@@ -80,10 +83,7 @@
       height: calc(100% - 60px);
       overflow-y: auto;
       left: 100%;
-      height: 500px;
-      transition: left 0.3s;
-
-     }
+      transition: left 0.3s; }
     .header .nav-menu-item {
       line-height: 70px; }
     .header .nav-menu-link:hover,
@@ -193,7 +193,54 @@
       text-align: center;
       padding: 10px 20px 5px 20px;
       font-family: 'Koulen', cursive;
-      font-size: 1.1rem; } }
+      font-size: 1.1rem; }
+  .titulo-slider {
+    text-align: center;
+    font-size: 2.5rem;
+    font-family: 'Bebas Neue', cursive; }
+  .subtitulo-slider {
+    text-align: center;
+    font-family: 'Koulen', cursive; }
+  .botonSlider {
+    padding-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+    .botonSlider a {
+      border: 3px solid black;
+      text-decoration: none;
+      font-size: 1.5rem;
+      padding: 10px 10px 10px 10px;
+      text-align: center;
+      align-items: center;
+      font-family: 'Bebas Neue', cursive;
+      color: #000;
+      background-color: #c1d8e9; }
+    .botonSlider a:hover {
+      background-color: #0d0da0; }
+  .slider {
+    width: 75vw;
+    height: auto;
+    margin: auto;
+    overflow: hidden;
+    padding-top: 50px; }
+    .slider .slide-track {
+      display: flex;
+      animation: scroll 40s linear infinite;
+      -webkit-animation: scroll 30s linear infinite;
+      width: calc(200px * 10); }
+    .slider .slide {
+      width: 300px;
+      display: flex; }
+      .slider .slide img {
+        width: 100%; }
+  @keyframes scroll {
+    0% {
+      -webkit-animation: translateX(0);
+      transform: translateX(0); }
+    100% {
+      -webkit-animation: translateX(calc(-300px * 5));
+      transform: translateX(calc(-300px * 5)); } } }
 
 @media (min-width: 769px) and (max-width: 2600px) {
   .header {
@@ -202,7 +249,8 @@
     position: fixed;
     width: 100%;
     top: 0;
-    left: 0; }
+    left: 0;
+    z-index: 1; }
   .nav {
     display: flex;
     justify-content: space-between;
@@ -264,9 +312,7 @@
       text-align: center;
       color: white; }
     .caja button {
-      align-items: center;
-      }
-     
+      align-items: center; }
   .datacenter {
     margin-top: 70px; }
     .datacenter .tituloServicios {
@@ -292,11 +338,9 @@
       padding-left: 65px; }
     .datacenter #botonData:hover {
       background-color: #3023e2; }
-      #botonMasInfo{
-        font-size: 1.3rem;
-        font-family: 'Koulen', cursive;
-        
-      }
+    .datacenter #botonMasInfo {
+      font-size: 1.3rem;
+      font-family: 'Koulen', cursive; }
   .infraestructuraIndustria {
     margin-top: 40px;
     padding-top: 30px;
@@ -326,6 +370,9 @@
       font-family: 'Koulen', cursive;
       background-image: linear-gradient(to right, #09094e, #0f0e0e);
       color: white; }
+    .infraestructuraIndustria #botonMasInfo {
+      font-size: 1.3rem;
+      font-family: 'Koulen', cursive; }
   .ingenieriaConsultoria {
     margin-top: 70px; }
     .ingenieriaConsultoria .tituloServicios {
@@ -351,6 +398,9 @@
       padding-left: 65px; }
     .ingenieriaConsultoria #botonData:hover {
       background-color: #3023e2; }
+    .ingenieriaConsultoria #botonMasInfo {
+      font-size: 1.3rem;
+      font-family: 'Koulen', cursive; }
   .caja-quienesSomos {
     background-image: linear-gradient(to right, #09094e, #0f0e0e);
     margin-top: 150px;
@@ -365,7 +415,54 @@
       text-align: left;
       padding: 50px 40px 25px 30px;
       font-family: 'Koulen', cursive;
-      font-size: 1.2rem; } }
+      font-size: 1.2rem; }
+  .titulo-slider {
+    text-align: center;
+    font-size: 2.5rem;
+    font-family: 'Bebas Neue', cursive; }
+  .subtitulo-slider {
+    text-align: center;
+    font-family: 'Koulen', cursive; }
+  .botonSlider {
+    padding-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+    .botonSlider a {
+      border: 3px solid black;
+      text-decoration: none;
+      font-size: 1.5rem;
+      padding: 10px 10px 10px 10px;
+      text-align: center;
+      align-items: center;
+      font-family: 'Bebas Neue', cursive;
+      color: #000;
+      background-color: #c1d8e9; }
+    .botonSlider a:hover {
+      background-color: #0d0da0; }
+  .slider {
+    width: 75vw;
+    height: auto;
+    margin: auto;
+    overflow: hidden;
+    padding-top: 50px; }
+    .slider .slide-track {
+      display: flex;
+      animation: scroll 30s linear infinite;
+      -webkit-animation: scroll 30s linear infinite;
+      width: calc(200px * 10); }
+    .slider .slide {
+      width: 300px;
+      display: flex; }
+      .slider .slide img {
+        width: 100%; }
+  @keyframes scroll {
+    0% {
+      -webkit-animation: translateX(0);
+      transform: translateX(0); }
+    100% {
+      -webkit-animation: translateX(calc(-300px * 5));
+      transform: translateX(calc(-300px * 5)); } } }
 
 footer {
   color: white; }
