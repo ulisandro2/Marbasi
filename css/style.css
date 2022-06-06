@@ -138,6 +138,9 @@
     .datacenter #botonData {
       font-size: 1.3rem;
       font-family: 'Koulen', cursive; }
+    .datacenter #botonMasInfo {
+      font-size: 1rem;
+      font-family: 'Koulen', cursive; }
   .infraestructuraIndustria {
     margin-top: 40px;
     background-image: linear-gradient(to right, #09094e, #0f0e0e);
@@ -159,6 +162,9 @@
     .infraestructuraIndustria #botonData {
       font-size: 1.3rem;
       font-family: 'Koulen', cursive; }
+    .infraestructuraIndustria #botonMasInfo {
+      font-size: 1rem;
+      font-family: 'Koulen', cursive; }
   .ingenieriaConsultoria {
     margin-top: 40px; }
     .ingenieriaConsultoria .tituloServicios {
@@ -177,6 +183,9 @@
       font-family: 'Koulen', cursive; }
     .ingenieriaConsultoria #botonData {
       font-size: 1.3rem;
+      font-family: 'Koulen', cursive; }
+    .ingenieriaConsultoria #botonMasInfo {
+      font-size: 1rem;
       font-family: 'Koulen', cursive; }
   .caja-quienesSomos {
     background-image: linear-gradient(to right, #09094e, #0f0e0e);
