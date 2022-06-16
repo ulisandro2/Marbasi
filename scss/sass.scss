@@ -157,9 +157,9 @@ $color: #656565;
       justify-content: center;
       
     img{
-       margin-top: 150px;
-       width: 290px;
-       height: 290px;
+       margin-top: 100px;
+       width: 260px;
+       height: 260px;
       
     }
      .tituloMarba{
@@ -190,7 +190,9 @@ $color: #656565;
 
         }
         img{
-            padding: 10px 15px 10px 15px;
+          background-image: url(/imagenes/datacenter.jpg);
+          background-size: cover;
+          animation: animate 2s infinite;
         }
         .parrafo{
             text-align: center;
@@ -208,7 +210,11 @@ $color: #656565;
           font-size: 1rem;
             font-family: 'Koulen', cursive;
         }
-      }
+       
+      
+        
+        }
+      
 
       .infraestructuraIndustria{
         margin-top: 40px;
@@ -342,12 +348,13 @@ $color: #656565;
     margin: auto;
     overflow: hidden;
     padding-top: 50px;
+   
     
     .slide-track{
       display: flex;
       
       animation: scroll 40s linear infinite;
-      -webkit-animation:scroll 30s linear infinite ;
+      // -webkit-animation:scroll 30s linear infinite ;
       width: calc(200px * 10);
      
     }
@@ -361,11 +368,11 @@ $color: #656565;
 
     @keyframes scroll {
         0%{
-          -webkit-animation: translateX(0);
+          //  -webkit-animation: translateX(0);
           transform: translateX(0);
         }
         100%{
-          -webkit-animation: translateX(calc(-300px * 5));
+          //  -webkit-animation: translateX(calc(-300px * 5));
           transform: translateX(calc(-300px * 5));
         }
     }
@@ -722,7 +729,7 @@ $color: #656565;
           transform: translateX(0);
         }
         100%{
-          -webkit-animation: translateX(calc(-300px * 5));
+           -webkit-animation: translateX(calc(-300px * 5));
           transform: translateX(calc(-300px * 5));
         }
     }
