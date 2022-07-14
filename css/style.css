@@ -59,6 +59,38 @@
   cursor: pointer;
   display: none; }
 
+  .cajaPositiva{
+    background-color: #0ba53e;
+    width: 400px;
+    border: #000 solid 2px;
+    margin-left: 50px;
+    height: 400px;
+  }
+
+  .cajaPositiva li{
+    font-size: 1.3rem;
+  }
+
+  .cajaNegativa{
+    background-color: #c4210c;
+    width: 400px;
+    border: #000 solid 2px;
+    margin-left: 50px;
+    height: 400px;
+  }
+
+  .cajaNegativa li{
+    font-size: 1.3rem;
+  }
+
+  .foda{
+    display: flex;
+    justify-content: space-around;
+  }
+
+
+  
+ 
 /* MOBILE */
 @media (max-width: 768px) {
   body {
@@ -413,7 +445,7 @@
     background-image: linear-gradient(to right, #09094e, #0f0e0e);
     margin-top: 150px;
     color: white;
-    height: 1500px;
+    height: 2500px;
     margin-bottom: 50px;
     padding: 70px 60px 40px 60px; }
     .caja-quienesSomos h1 {
