@@ -157,7 +157,7 @@ h2 {
       text-align: center;
       font-size: 70px;
       color: white;
-      font-family: 'Bebas Neue', cursive; }
+      font-family: 'Bebas Neue'; }
     .caja .subtitulo {
       text-align: center;
       color: white; }
@@ -180,13 +180,13 @@ h2 {
       padding: 5px 20px 10px 20px;
       font-size: 1.2rem;
       width: 100%;
-      font-family: 'Koulen', cursive; }
+      font-family: 'Bebas Neue', cursive; }
     .datacenter #botonData {
       font-size: 1.3rem;
-      font-family: 'Koulen', cursive; }
+      font-family: 'Bebas Neue', cursive; }
     .datacenter #botonMasInfo {
       font-size: 1rem;
-      font-family: 'Koulen', cursive; }
+      font-family: 'Bebas Neue', cursive; }
   .infraestructuraIndustria {
     margin-top: 40px;
     background-image: linear-gradient(to right, #09094e, #0f0e0e);
@@ -204,13 +204,13 @@ h2 {
       margin-top: 7px;
       font-size: 1.2rem;
       padding: 5px 25px 5px 25px;
-      font-family: 'Koulen', cursive; }
+      font-family: 'Bebas Neue', cursive; }
     .infraestructuraIndustria #botonData {
       font-size: 1.3rem;
-      font-family: 'Koulen', cursive; }
+      font-family: 'Bebas Neue', cursive; }
     .infraestructuraIndustria #botonMasInfo {
       font-size: 1rem;
-      font-family: 'Koulen', cursive; }
+      font-family: 'Bebas Neue', cursive; }
   .ingenieriaConsultoria {
     margin-top: 40px; }
     .ingenieriaConsultoria .tituloServicios {
@@ -226,18 +226,18 @@ h2 {
       margin-top: 7px;
       font-size: 1.2rem;
       padding: 5px 25px 5px 25px;
-      font-family: 'Koulen', cursive; }
+      font-family: 'Bebas Neue', cursive; }
     .ingenieriaConsultoria #botonData {
       font-size: 1.3rem;
-      font-family: 'Koulen', cursive; }
+      font-family: 'Bebas Neue', cursive; }
     .ingenieriaConsultoria #botonMasInfo {
       font-size: 1rem;
-      font-family: 'Koulen', cursive; }
+      font-family: 'Bebas Neue', cursive; }
   .caja-quienesSomos {
     background-image: linear-gradient(to right, #09094e, #0f0e0e);
     margin-top: 50px;
     color: white;
-    height: 2300px;
+    padding: 25px;
     margin-bottom: 50px; }
     .caja-quienesSomos h1 {
       text-align: center;
@@ -247,7 +247,7 @@ h2 {
     .caja-quienesSomos p {
       text-align: center;
       padding: 10px 20px 5px 20px;
-      font-family: 'Koulen', cursive;
+      font-family: 'Bebas Neue', cursive;
       font-size: 1rem; }
   .titulo-slider {
     text-align: center;
@@ -287,7 +287,7 @@ h2 {
       width: 300px;
       display: flex; }
       .slider .slide img {
-        width: 100%; }
+        width: 56px; }
   @keyframes scroll {
     0% {
       transform: translateX(0); }
@@ -383,16 +383,16 @@ h2 {
       padding: 5px 20px 10px 20px;
       font-size: 1.6rem;
       width: 100%;
-      font-family: 'Koulen', cursive; }
+      font-family: 'Bebas Neue', cursive; }
     .datacenter #botonData {
       font-size: 1.7rem;
-      font-family: 'Koulen', cursive;
+      font-family: 'Bebas Neue', cursive;
       padding-left: 65px; }
     .datacenter #botonData:hover {
       background-color: #3023e2; }
     .datacenter #botonMasInfo {
       font-size: 1.3rem;
-      font-family: 'Koulen', cursive; }
+      font-family: 'Bebas Neue', cursive; }
   .infraestructuraIndustria {
     margin-top: 40px;
     padding-top: 30px;
@@ -416,15 +416,15 @@ h2 {
       margin-top: 7px;
       font-size: 1.6rem;
       padding: 5px 25px 5px 25px;
-      font-family: 'Koulen', cursive; }
+      font-family: 'Bebas Neue', cursive; }
     .infraestructuraIndustria #botonData {
       font-size: 1.3rem;
-      font-family: 'Koulen', cursive;
+      font-family: 'Bebas Neue', cursive;
       background-image: linear-gradient(to right, #09094e, #0f0e0e);
       color: white; }
     .infraestructuraIndustria #botonMasInfo {
       font-size: 1.3rem;
-      font-family: 'Koulen', cursive; }
+      font-family: 'Bebas Neue', cursive; }
   .ingenieriaConsultoria {
     margin-top: 70px; }
     .ingenieriaConsultoria .tituloServicios {
@@ -443,30 +443,30 @@ h2 {
       padding: 5px 20px 10px 20px;
       font-size: 1.6rem;
       width: 100%;
-      font-family: 'Koulen', cursive; }
+      font-family: 'Bebas Neue', cursive; }
     .ingenieriaConsultoria #botonData {
       font-size: 1.7rem;
-      font-family: 'Koulen', cursive;
+      font-family: 'Bebas Neue', cursive;
       padding-left: 65px; }
     .ingenieriaConsultoria #botonData:hover {
       background-color: #3023e2; }
     .ingenieriaConsultoria #botonMasInfo {
       font-size: 1.3rem;
-      font-family: 'Koulen', cursive; }
+      font-family: 'Bebas Neue', cursive; }
   .caja-quienesSomos {
     background-image: linear-gradient(to right, #09094e, #0f0e0e);
     margin-top: 150px;
     color: white;
-    height: 3000px;
+    /* height: 3000px; */
     margin-bottom: 50px;
-    padding: 70px 60px 40px 60px; }
+    padding: 20px; }
     .caja-quienesSomos h1 {
       margin-top: 100px;
       font-family: 'Bebas Neue', cursive; }
     .caja-quienesSomos p {
       text-align: left;
       padding: 50px 40px 25px 30px;
-      font-family: 'Koulen', cursive;
+      font-family: 'Bebas Neue', cursive;
       font-size: 1.2rem; }
   .titulo-slider {
     text-align: center;
@@ -474,7 +474,7 @@ h2 {
     font-family: 'Bebas Neue', cursive; }
   .subtitulo-slider {
     text-align: center;
-    font-family: 'Koulen', cursive; }
+    font-family: 'Bebas Neue', cursive; }
   .botonSlider {
     padding-top: 30px;
     display: flex;
@@ -521,7 +521,7 @@ h2 {
     background-image: linear-gradient(to right, #09094e, #0f0e0e);
     margin-top: 50px;
     color: white;
-    height: 3600px;
+    padding: 26px;
     margin-bottom: 50px; }
     .caja-quienesSomos h1 {
       text-align: center;
@@ -531,7 +531,7 @@ h2 {
     .caja-quienesSomos p {
       text-align: center;
       padding: 10px 20px 5px 20px;
-      font-family: 'Koulen', cursive;
+      font-family: 'Bebas Neue', cursive;
       font-size: 15px; } }
 
 footer {
