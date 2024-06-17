@@ -1,3 +1,45 @@
+<?php
+$response = array('status' => '', 'message' => '');
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  // Recibir datos del formulario
+  $fullname = $_POST['name'];
+  $email = $_POST['email'];
+  $phone = $_POST['phone'];
+  $empresa = $_POST['Empresa'];
+  $message = $_POST['mensaje'];
+
+  // Dirección de correo a la que se enviará el mensaje
+  $to = "sanchezulises952@gmail.com";
+  $subject = "Mensaje de la pagina web Marba.";
+  $body = "Nombre Completo: $fullname\nEmail: $email\nTeléfono: $phone\nEmpresa: $empresa\nMensaje: $message";
+  $headers = "From: $email";
+
+  // Enviar correo electrónico
+  if (mail($to, $subject, $body, $headers)) {
+    $response['status'] = 'success';
+    $response['message'] = 'Correo enviado exitosamente';
+  } else {
+    $response['status'] = 'error';
+    $response['message'] = 'Error al enviar el correo';
+  }
+
+  // Devolver respuesta JSON
+  header('Content-Type: application/json');
+  echo json_encode($response);
+  exit;
+}
+
+$message = '';
+if (isset($_POST['enviar'])) {
+    // Procesar el formulario
+    // Simular un retraso para ver el spinner (quitar en producción)
+    sleep(2);
+    $message = json_encode(['status' => 'success', 'message' => 'Correo enviado exitosamente']);
+}
+?>
+
+
 <!DOCTYPE html>
 <html>
 
@@ -14,6 +56,8 @@
   <meta name="keywords" content="servicios criticos datacenter infraestructura industria mercaderias capital humano termomecanica ">
   <meta name="description"
     content="Marba es una empresa de gran capital humano capacitado durante mas de 14 años en el rubro infraestructura eléctrica y termomecánica , con gran solidez en instalaciones de gran criticidad donde la falta de suministro no es una opción . Una de nuestras premisas fundamentales es la capacitación de nuestro personal...">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 
   <!-- estilos -->
   <link rel="stylesheet" href="css/style.css">
@@ -248,17 +292,14 @@ En nuestra área de RR.HH contamos con 2 jefes en la selección de personal y 3 
 
   <footer>
     <div id="contacto" class="content">
-
-      
-
-      <div class="contact-wrapper animated bounceInUp">
+       <div class="contact-wrapper animated bounceInUp">
         <div class="contact-form">
           <h3>Contacto</h3>
-          <form action="">
+          <form id="contactForm" class="formContact" action="index.php" method="post">
             <p>
               <label>Nombre Completo
               </label>
-              <input type="text" name="fullname">
+              <input type="text" name="name">
             </p>
             <p>
               <label>Email
@@ -275,14 +316,16 @@ En nuestra área de RR.HH contamos con 2 jefes en la selección de personal y 3 
             </p>
             <p class="block">
               <label>Mensaje</label>
-              <textarea name="message" rows="3"></textarea>
+              <textarea name="mensaje" rows="3"></textarea>
             </p>
             <p class="block">
-              <button>
-                Enviar
-              </button>
+            <button id="submitBtn" name="enviar" value="enviar" type="submit">
+             <span id="buttonText">Enviar</span>
+             <span id="spinner" class="spinner-border spinner-border-sm" role="status" aria-hidden="true" style="display: none;"></span>
+            </button>
             </p>
           </form>
+          
         </div>
         <div class="contact-info">
           <h4>Mas Informacion</h4>
@@ -312,7 +355,11 @@ En nuestra área de RR.HH contamos con 2 jefes en la selección de personal y 3 
 
 
   </footer>
-  
+
+
+
+
+
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
@@ -346,7 +393,160 @@ En nuestra área de RR.HH contamos con 2 jefes en la selección de personal y 3 
           }]
       });
   });
+
+  document.getElementById("contactForm").addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  var formData = new FormData(this);
+
+  fetch('index.php', {
+    method: 'POST',
+    body: formData
+  })
+  .then(response => response.text())  // Cambiar a response.text() para ver el contenido
+  .then(data => {
+    console.log('Raw response:', data);  // Mostrar la respuesta cruda
+    try {
+      let jsonData = JSON.parse(data);  // Intentar parsear la respuesta como JSON
+      console.log(jsonData);  // Mostrar los datos JSON parseados
+
+      if (jsonData.status === 'success') {
+        Swal.fire({
+          icon: 'success',
+          title: 'Éxito',
+          text: jsonData.message
+        });
+        // Resetear formulario
+        document.getElementById("contactForm").reset();
+      } else {
+        Swal.fire({
+          icon: 'error',
+          title: 'Error',
+          text: jsonData.message
+        });
+      }
+    } catch (error) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'La respuesta no es un JSON válido: ' + error.message
+      });
+    }
+  })
+  .catch(error => {
+    console.error('Error:', error);
+    Swal.fire({
+      icon: 'error',
+      title: 'Error',
+      text: 'Ocurrió un error al enviar el formulario: ' + error.message
+    });
+  })
+  .finally(() => {
+    // Re-inicializar el carrusel después de enviar el formulario
+    $('.customer-logos').slick('unslick');
+    $('.customer-logos').slick({
+      slidesToShow: 4,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 1500,
+      arrows: false,
+      dots: false,
+      pauseOnHover:false,
+      responsive: [{
+          breakpoint: 768,
+          setting: {
+              slidesToShow:4
+          }
+      }, {
+          breakpoint: 520,
+          setting: {
+              slidesToShow: 3
+          }
+      }]
+    });
+  });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+      const form = document.getElementById('contactForm');
+      const submitBtn = document.getElementById('submitBtn');
+      const spinner = document.getElementById('spinner');
+      const buttonText = document.getElementById('buttonText');
+
+      form.addEventListener('submit', function(event) {
+        event.preventDefault(); // Evita el envío del formulario de inmediato
+        spinner.style.display = 'inline-block';
+        buttonText.style.display = 'none';
+        submitBtn.disabled = true;
+
+        const formData = new FormData(form);
+
+        fetch('index.php', {
+          method: 'POST',
+          body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+          spinner.style.display = 'none';
+          buttonText.style.display = 'inline';
+          submitBtn.disabled = false;
+
+          if (data.status === 'success') {
+            Swal.fire({
+              title: 'Éxito',
+              text: data.message,
+              icon: 'success',
+              confirmButtonText: 'OK'
+            });
+          } else {
+            Swal.fire({
+              title: 'Error',
+              text: data.message,
+              icon: 'error',
+              confirmButtonText: 'OK'
+            });
+          }
+        })
+        .catch(error => {
+          spinner.style.display = 'none';
+          buttonText.style.display = 'inline';
+          submitBtn.disabled = false;
+
+          Swal.fire({
+            title: 'Error',
+            text: 'Hubo un problema al enviar el formulario',
+            icon: 'error',
+            confirmButtonText: 'OK'
+          });
+        });
+      });
+
+      <?php if ($message) { ?>
+        const messageData = <?php echo $message; ?>;
+        spinner.style.display = 'none';
+        buttonText.style.display = 'inline';
+        submitBtn.disabled = false;
+        if (messageData.status === 'success') {
+          Swal.fire({
+            title: 'Éxito',
+            text: messageData.message,
+            icon: 'success',
+            confirmButtonText: 'OK'
+          });
+        } else {
+          Swal.fire({
+            title: 'Error',
+            text: messageData.message,
+            icon: 'error',
+            confirmButtonText: 'OK'
+          });
+        }
+      <?php } ?>
+    });
+
   </script> 
+
+
 <script src="js/index.js"></script>
 
 

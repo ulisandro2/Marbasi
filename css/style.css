@@ -103,6 +103,11 @@ h2 {
 .slick-initialized .slick-slide {
   display: block; }
 
+
+  .spinner-border {
+    margin-left: 5px;
+  }
+
 /* MOBILE */
 @media (max-width: 768px) {
   body {
@@ -459,7 +464,7 @@ h2 {
     color: white;
     /* height: 3000px; */
     margin-bottom: 50px;
-    padding: 20px; }
+    padding: 40px; }
     .caja-quienesSomos h1 {
       margin-top: 100px;
       font-family: 'Bebas Neue', cursive; }
