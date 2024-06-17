@@ -295,7 +295,11 @@ En nuestra área de RR.HH contamos con 2 jefes en la selección de personal y 3 
        <div class="contact-wrapper animated bounceInUp">
         <div class="contact-form">
           <h3>Contacto</h3>
+<<<<<<< HEAD:index.php
           <form id="contactForm" class="formContact" action="index.php" method="post">
+=======
+          <form method="post" action="formulario.php">
+>>>>>>> 2e340051870c5ecc0a63c7d610153f3c7e8bd935:index.html
             <p>
               <label>Nombre Completo
               </label>
