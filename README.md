@@ -4,6 +4,8 @@
 ![CSS](https://img.shields.io/badge/CSS-3-red?style=flat&logo=css3)
 ![JavaScript](https://img.shields.io/badge/JavaScript-ES6-f0db4f?style=flat&logo=javascript)
 ![Bootstrap](https://img.shields.io/badge/Bootstrap-5.1-563d7c?style=flat&logo=bootstrap)
+![PHP](https://img.shields.io/badge/PHP-5.1-563d7c?style=flat&logo=php)
+![xampp](https://img.shields.io/badge/xampp-5.1-563d7c?style=flat&logo=xampp)
 
 Welcome to Marba, a company with over 14 years of expertise in electrical and thermomechanical infrastructure. We take pride in our highly skilled workforce and specialize in critical installations where a disruption in supply is not an option.
 This is my second freelance project where I create a landing page for an SME (small/medium-sized company) where they can show their services, see their work, see clients and contact forms.
